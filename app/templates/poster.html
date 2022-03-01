@@ -1,61 +1,64 @@
 <html>
-    <head>
-        <title>Poster-Gallery</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='brainstorming.css') }}" type="text/css" />
-    </head>
+  <head>
+    <title>Poster-Gallery</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='brainstorming.css') }}"
+      type="text/css"
+    />
+  </head>
 
-    <body>
-        <div class="gallery">
-            {% for poster in posters %}
-            <div class="gallery-entry">
-                <div class="poster">
-                    <div class="container arrowright">
-                        <div class="box arrowright"></div>
-                    </div>
-                    <div class="container arrowdown">
-                        <div class="box arrowdown"></div>
-                    </div>
-                    <div class="container title">
-                        <div class="box title">
-                            {{ poster.title|safe }}
-                        </div>
-                    </div>
-                    <div class="container idea">
-                        <div class="box idea">
-                            {{ poster.idea|safe }}
-                        </div>
-                    </div>
-                    <div class="container problem">
-                        <div class="box problem">
-                            {{ poster.problem|safe }}
-                        </div>
-                    </div>
-                    <div class="container data">
-                        <div class="box data">
-                            {{ poster.data|safe }}
-                        </div>
-                    </div>
-                    <div class="container missing">
-                        <div class="box missing">
-                            {{ poster.missing|safe }}
-                        </div>
-                    </div>
-                    <div class="container people">
-                        <div class="box people">
-                            {{ poster.people|safe }}
-                        </div>
-                    </div>
-                </div>
-                <small><a href="https://{{ poster.url }}">Link zum Pad</a></small>
+  <body>
+    <div class="gallery">
+      {% for poster in posters %}
+      <div class="gallery-entry">
+        <div class="poster">
+          <div class="container image">
+            <div class="box image">
+              <img
+                src="{{ url_for('static', filename='klimadatenschule.svg') }}"
+              />
             </div>
-            {% endfor %}
+          </div>
+
+          <div class="container title">
+            <div class="box title">{{ poster.title|safe }}</div>
+          </div>
+          <div class="container idea">
+            <h3>Unsere Aktion - das ist passiert</h3>
+            <div class="box idea">{{ poster.idea|safe }}</div>
+          </div>
+          <div class="container problem">
+            <h3>Problem / Fragestellung</h3>
+            <div class="box problem">{{ poster.problem|safe }}</div>
+          </div>
+          <div class="container data">
+            <h3>Unsere Klimadaten</h3>
+            <div class="box data">{{ poster.data|safe }}</div>
+          </div>
+          <div class="container effect">
+            <h3>Wirkung - das haben wir erreicht</h3>
+            <div class="box effect">{{ poster.effect|safe }}</div>
+          </div>
+          <div class="container people">
+            <h3>LINKS + KONTAKT</h3>
+            <div class="box people">{{ poster.people|safe }}</div>
+          </div>
         </div>
+        <small><a href="https://{{ poster.url }}">Link zum Pad</a></small>
+      </div>
+      {% endfor %}
+    </div>
 
-        <footer>
-            <small>Build for <a href="https://jugendhackt.org">Jugend hackt</a> by Hanno Sternberg.</small><br />
-            <small>Poster design based on "Brainstormingplakat-Vorlage - CC-BY Ralf Appelt"</small>
-        </footer>
-
-    </body>
-
+    <footer>
+      <small
+        >Build for <a href="https://jugendhackt.org">Jugend hackt</a> by Hanno
+        Sternberg.</small
+      ><br />
+      <small
+        >Poster design based on "Brainstormingplakat-Vorlage - CC-BY Ralf
+        Appelt"</small
+      >
+    </footer>
+  </body>
 </html>

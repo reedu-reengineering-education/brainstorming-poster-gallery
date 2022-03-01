@@ -18,7 +18,7 @@ class PosterData:
     idea: str
     problem: str
     data: str
-    missing: str
+    effect: str
     people: str
     url: str
 
@@ -62,14 +62,14 @@ def generate_posters(urls):
     posters = []
     for url in urls:
         content = download_pad(url)
-        title, idea, problem, data, missing, people, *rest = process_markdown(content)
+        title, problem, idea, data, effect, people, *rest = process_markdown(content)
         posters.append(
             PosterData(
                 title[0],
                 "".join(idea),
                 "".join(problem),
                 "".join(data),
-                "".join(missing),
+                "".join(effect),
                 "".join(people),
                 url.replace("https://", ""),
             )
