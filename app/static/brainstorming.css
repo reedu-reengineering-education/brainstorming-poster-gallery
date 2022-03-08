@@ -24,7 +24,7 @@ body {
 }
 
 .poster {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.25fr 0.25fr 1fr 0.5fr 1fr 0.25fr;
   grid-template-areas:
@@ -33,7 +33,7 @@ body {
     "idea    problem"
     "idea    data"
     "idea  effect"
-    "people  people";
+    "people  people"; */
   max-width: 600px;
   min-width: 500px;
   margin: 0px auto;
@@ -42,6 +42,24 @@ body {
   border-radius: 0.25em;
   background: white;
   font-size: smaller;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.25fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+  grid-template-areas:
+    "title   title"
+    "image    problem"
+    "image    problem"
+    "image    data"
+    "idea    data"
+    "idea    effect"
+    "idea    effect"
+    "idea  effect";
+  background-color: #00c7bf;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 /* .box {
   position: absolute;
@@ -68,6 +86,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.container.image > img {
+  width: 100%;
+  height: auto;
 }
 
 .box.image {
@@ -88,8 +113,7 @@ body {
     0 19%,
     23% 6%
   );
-  margin: 0;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .box.title {
@@ -102,7 +126,7 @@ body {
 .container.idea {
   /* padding-top: 164%; */
   grid-area: idea;
-  background-color: rgba(59, 130, 246, 0.2);
+  background-color: #fff;
   border-radius: 0.5rem;
 }
 /**
@@ -126,7 +150,7 @@ body {
 .container.problem {
   /* padding-top: 164%; */
   grid-area: problem;
-  background-color: rgba(255, 251, 219);
+  background-color: #fff;
   border-radius: 0.5rem;
 }
 /**
@@ -149,7 +173,7 @@ body {
 .container.data {
   /* padding-top: 164%; */
   grid-area: data;
-  background-color: rgba(59, 130, 246, 0.2);
+  background-color: #beffff;
   border-radius: 0.5rem;
 }
 /**
@@ -163,7 +187,7 @@ body {
 .container.effect {
   /* padding-top: 82%; */
   grid-area: effect;
-  background-color: rgba(255, 251, 219);
+  background-color: #ffed00;
   border-radius: 0.5rem;
 }
 /**
@@ -176,8 +200,10 @@ body {
 .container.people {
   /* padding-top: 82%; */
   grid-area: people;
-  background-color: rgba(255, 251, 219);
+  background-color: #6ac7d9;
   border-radius: 0.5rem;
+  margin: 0;
+  margin-top: 0.5rem;
 }
 /**
 .box.people {
