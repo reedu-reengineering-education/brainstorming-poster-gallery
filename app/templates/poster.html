@@ -13,6 +13,9 @@
       {% for poster in posters %}
       <div class="gallery-entry">
         <div class="poster">
+          <div class="poster-padding">
+          
+          
           <div class="container image">
             <div class="box image">
               <img
@@ -25,14 +28,14 @@
               <div class="box title">{{ poster.title|safe }}</div>
             </div>
             <div class="container idea">
-              <h3>Unsere Aktion - das ist passiert</h3>
+              <h3>Unsere Aktion: Was ist passiert?</h3>
               <div class="box idea">{{ poster.idea|safe }}</div>
             </div>
             <div class="container image">
               <img src="{{ poster.image|safe }}" />
             </div>
             <div class="container problem">
-              <h3>Problem / Fragestellung</h3>
+              <h3>Unsere Fragestellung</h3>
               <div class="box problem">{{ poster.problem|safe }}</div>
             </div>
             <div class="container data">
@@ -40,7 +43,7 @@
               <div class="box data">{{ poster.data|safe }}</div>
             </div>
             <div class="container effect">
-              <h3>Wirkung - das haben wir erreicht</h3>
+              <h3>Unsere Wirkung: Was haben wir erreicht?</h3>
               <div class="box effect">{{ poster.effect|safe }}</div>
             </div>
           </div>
@@ -48,6 +51,8 @@
             <h3>LINKS + KONTAKT</h3>
             <div class="box people">{{ poster.people|safe }}</div>
           </div>
+        </div>
+          <div class="footer"></div>
         </div>
         <small><a href="https://{{ poster.url }}">Link zum Pad</a></small>
       </div>
