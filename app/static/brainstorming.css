@@ -52,8 +52,8 @@ body {
     "title   title"
     "image    problem"
     "image    problem"
-    "image    data"
-    "idea    data"
+    "diagram    data"
+    "diagram    data"
     "idea    effect"
     "idea    effect"
     "idea  effect";
@@ -81,8 +81,16 @@ body {
   padding: 0.5rem 1rem;
   margin: 0.25rem;
 }
+
 .container.image {
   grid-area: image;
+}
+.container.diagram {
+  grid-area: diagram;
+}
+
+.container.image,
+.container.diagram {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +98,8 @@ body {
   border-radius: 0.5rem;
 }
 
-.container.image > img {
+.container.image > img,
+.container.diagram > img {
   width: 100%;
   height: auto;
 }

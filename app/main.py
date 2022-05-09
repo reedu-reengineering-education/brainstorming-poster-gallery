@@ -16,6 +16,7 @@ app = Flask("Brainstorming")
 class PosterData:
     title: str
     image: str
+    diagram: str
     idea: str
     problem: str
     data: str
@@ -39,9 +40,10 @@ def process_markdown(text):
             parts.append([])
         elif line.startswith("<p><img"):
             image = line[13:-15]
-            parts.append([image])
+            parts[-1].append(image)
         else:
             parts[-1].append(line)
+
     return parts
 
 
@@ -66,11 +68,13 @@ def generate_posters(urls):
     posters = []
     for url in urls:
         content = download_pad(url)
-        title, image, problem, idea, data, effect, people, *rest = process_markdown(content)
+        print(process_markdown(content))
+        title, image, diagram, problem, idea, data, effect, people, *rest = process_markdown(content)
         posters.append(
             PosterData(
                 title[0],
                 "".join(image),
+                "".join(diagram),
                 "".join(idea),
                 "".join(problem),
                 "".join(data),
