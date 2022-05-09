@@ -37,11 +37,15 @@ body {
   max-width: 600px;
   min-width: 500px;
   margin: 0px auto;
-  padding: 0em 2.2em 1.5em 2.2em;
+  
   box-shadow: 3px 5px 4px 2px rgb(158 158 158 / 50%);
   border-radius: 0.25em;
   background: white;
   font-size: smaller;
+}
+
+.poster-padding {
+  padding: 0em 2.2em 1.5em 2.2em;
 }
 
 .content {
@@ -112,7 +116,7 @@ body {
   grid-area: title;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 251, 219);
+  background-color: #00B7CF;
   clip-path: polygon(
     50% 15%,
     75% 8%,
@@ -130,6 +134,8 @@ body {
   padding: 1rem;
   font-size: 18pt;
   text-align: center;
+  font-weight: bold;
+  color: white;
 }
 
 .container.idea {
@@ -221,6 +227,16 @@ body {
   transform: rotate(-6deg);
   margin-right: -8%;
 } */
+
+.footer {
+  width: 100%;
+  height: 3rem;
+  background-color:  #beffff;
+  border-bottom-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  clip-path: polygon(46% 6%, 58% 12%, 76% 21%, 93% 14%, 100% 21%, 100% 100%, 0 100%, 0 25%, 13% 10%, 31% 20%);
+
+}
 
 h3 {
   margin: 0.5rem 0;
