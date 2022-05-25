@@ -5,13 +5,7 @@
 }
 
 body {
-  background-color: #d1d6da;
-  background-image: linear-gradient(#eef0f180 2px, transparent 2px),
-    linear-gradient(90deg, #eef0f180 2px, transparent 2px),
-    linear-gradient(#dde0e380 1px, transparent 1px),
-    linear-gradient(90deg, #dde0e380 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-color: #60bda8;
   font-family: "Nunito";
 }
 
@@ -37,7 +31,7 @@ body {
   max-width: 600px;
   min-width: 500px;
   margin: 0px auto;
-  
+
   box-shadow: 3px 5px 4px 2px rgb(158 158 158 / 50%);
   border-radius: 0.25em;
   background: white;
@@ -54,8 +48,8 @@ body {
   grid-template-rows: 0.25fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
   grid-template-areas:
     "title   title"
-    "image    problem"
-    "image    problem"
+    "problem  image"
+    "problem  image"
     "diagram    data"
     "diagram    data"
     "idea    effect"
@@ -116,7 +110,7 @@ body {
   grid-area: title;
   align-items: center;
   justify-content: center;
-  background-color: #00B7CF;
+  background-color: #00b7cf;
   clip-path: polygon(
     50% 15%,
     75% 8%,
@@ -231,11 +225,21 @@ body {
 .footer {
   width: 100%;
   height: 3rem;
-  background-color:  #beffff;
+  background-color: #beffff;
   border-bottom-left-radius: 0.25em;
   border-bottom-right-radius: 0.25em;
-  clip-path: polygon(46% 6%, 58% 12%, 76% 21%, 93% 14%, 100% 21%, 100% 100%, 0 100%, 0 25%, 13% 10%, 31% 20%);
-
+  clip-path: polygon(
+    46% 6%,
+    58% 12%,
+    76% 21%,
+    93% 14%,
+    100% 21%,
+    100% 100%,
+    0 100%,
+    0 25%,
+    13% 10%,
+    31% 20%
+  );
 }
 
 h3 {
@@ -252,7 +256,7 @@ ul {
 footer {
   padding-top: 2em;
   text-align: center;
-  color: gray;
+  color: white;
 }
 
 .landing {
@@ -291,4 +295,8 @@ footer {
 .landing input:focus,
 .landing input:hover {
   border: 1px solid #483d8b;
+}
+
+a {
+  color: white;
 }

@@ -14,47 +14,45 @@
       <div class="gallery-entry">
         <div class="poster">
           <div class="poster-padding">
-          
-          
-          <div class="container image">
-            <div class="box image">
-              <img
-                src="{{ url_for('static', filename='klimadatenschule.svg') }}"
-              />
-            </div>
-          </div>
-          <div class="content">
-            <div class="container title">
-              <div class="box title">{{ poster.title|safe }}</div>
-            </div>
-            <div class="container idea">
-              <h3>Unsere Aktion: Was ist passiert?</h3>
-              <div class="box idea">{{ poster.idea|safe }}</div>
-            </div>
-            <div class="container diagram">
-              <img src="{{ poster.diagram|safe }}" />
-            </div>
             <div class="container image">
-              <img src="{{ poster.image|safe }}" />
+              <div class="box image">
+                <img
+                  src="{{ url_for('static', filename='klimadatenschule.svg') }}"
+                />
+              </div>
             </div>
-            <div class="container problem">
-              <h3>Unsere Fragestellung</h3>
-              <div class="box problem">{{ poster.problem|safe }}</div>
+            <div class="content">
+              <div class="container title">
+                <div class="box title">{{ poster.title|safe }}</div>
+              </div>
+              <div class="container idea">
+                <h3>Unsere Aktion: Was ist passiert?</h3>
+                <div class="box idea">{{ poster.idea|safe }}</div>
+              </div>
+              <div class="container diagram">
+                <img src="{{ poster.diagram|safe }}" />
+              </div>
+              <div class="container image">
+                <img src="{{ poster.image|safe }}" />
+              </div>
+              <div class="container problem">
+                <h3>Unsere Fragestellung</h3>
+                <div class="box problem">{{ poster.problem|safe }}</div>
+              </div>
+              <div class="container data">
+                <h3>Unsere Klimadaten</h3>
+                <div class="box data">{{ poster.data|safe }}</div>
+              </div>
+              <div class="container effect">
+                <h3>Unsere Wirkung: Was haben wir erreicht?</h3>
+                <div class="box effect">{{ poster.effect|safe }}</div>
+              </div>
             </div>
-            <div class="container data">
-              <h3>Unsere Klimadaten</h3>
-              <div class="box data">{{ poster.data|safe }}</div>
-            </div>
-            <div class="container effect">
-              <h3>Unsere Wirkung: Was haben wir erreicht?</h3>
-              <div class="box effect">{{ poster.effect|safe }}</div>
+            <div class="container people">
+              <h3>LINKS + KONTAKT</h3>
+              <div class="box people">{{ poster.people|safe }}</div>
             </div>
           </div>
-          <div class="container people">
-            <h3>LINKS + KONTAKT</h3>
-            <div class="box people">{{ poster.people|safe }}</div>
-          </div>
-        </div>
           <div class="footer"></div>
         </div>
         <small><a href="https://{{ poster.url }}">Link zum Pad</a></small>
@@ -63,14 +61,11 @@
     </div>
 
     <footer>
-      <small
-        >Build for <a href="https://jugendhackt.org">Jugend hackt</a> by Hanno
-        Sternberg.</small
-      ><br />
-      <small
-        >Poster design based on "Brainstormingplakat-Vorlage - CC-BY Ralf
-        Appelt"</small
-      >
+      <small>
+        Build for <a href="https://jugendhackt.org">Jugend hackt</a> by Hanno
+        Sternberg.
+      </small>
+      <small>Extended by <a href="https://reedu.de">re:edu</a> </small>
     </footer>
   </body>
 </html>
