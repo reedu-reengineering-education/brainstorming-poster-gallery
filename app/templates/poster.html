@@ -73,7 +73,7 @@
         </div>
         <!-- <small><a href="https://{{ poster.url }}">Link zum Pad</a></small> -->
         <br />
-        <small><button onclick="printPoster()">Print</button></small>
+        <!-- <small><button onclick="printPoster()">Print</button></small> -->
       </div>
       {% endfor %}
     </div>
@@ -110,18 +110,19 @@
     <script>
       function printPoster() {
         const elem = document.getElementById("poster");
-        html2pdf()
-          .set({
-            filename: "myfile.pdf",
-            html2canvas: {
-              useCORS: true,
-            },
-            jsPDF: {
-              format: "a4",
-            },
-          })
-          .from(elem)
-          .save();
+
+        // html2pdf()
+        //   .from(elem)
+        //   .set({
+        //     filename: "myfile.pdf",
+        //     html2canvas: {
+        //       useCORS: true,
+        //     },
+        //     jsPDF: {
+        //       format: "a4",
+        //     },
+        //   })
+        //   .save();
 
         // html2canvas(elem, {
         //   onrendered: function (canvasObj) {
