@@ -12,7 +12,7 @@
     <div class="gallery">
       {% for poster in posters %}
       <div class="gallery-entry">
-        <div class="poster">
+        <div class="poster" id="poster">
           <div class="poster-padding">
             <div class="container image">
               <div class="box image">
@@ -25,20 +25,35 @@
               <div class="container title">
                 <div class="box title">{{ poster.title|safe }}</div>
               </div>
+              <!-- <div class="row"> -->
               <div class="container idea">
                 <h3>Unsere Aktion: Was ist passiert?</h3>
                 <div class="box idea">{{ poster.idea|safe }}</div>
               </div>
-              <div class="container diagram">
-                <img src="{{ poster.diagram|safe }}" />
-              </div>
               <div class="container image">
-                <img src="{{ poster.image|safe }}" />
+                <a
+                  data-fslightbox
+                  data-type="image"
+                  href="{{ poster.image|safe }}"
+                >
+                  <img src="{{ poster.image|safe }}" />
+                </a>
+              </div>
+              <!-- </div> -->
+              <div class="container diagram">
+                <a
+                  data-fslightbox
+                  data-type="image"
+                  href="{{ poster.diagram|safe }}"
+                >
+                  <img src="{{ poster.diagram|safe }}" />
+                </a>
               </div>
               <div class="container problem">
                 <h3>Unsere Fragestellung</h3>
                 <div class="box problem">{{ poster.problem|safe }}</div>
               </div>
+              <!-- <div class="row"> -->
               <div class="container data">
                 <h3>Unsere Klimadaten</h3>
                 <div class="box data">{{ poster.data|safe }}</div>
@@ -47,6 +62,7 @@
                 <h3>Unsere Wirkung: Was haben wir erreicht?</h3>
                 <div class="box effect">{{ poster.effect|safe }}</div>
               </div>
+              <!-- </div> -->
             </div>
             <div class="container people">
               <h3>LINKS + KONTAKT</h3>
@@ -55,7 +71,9 @@
           </div>
           <div class="footer"></div>
         </div>
-        <small><a href="https://{{ poster.url }}">Link zum Pad</a></small>
+        <!-- <small><a href="https://{{ poster.url }}">Link zum Pad</a></small> -->
+        <br />
+        <!-- <small><button onclick="printPoster()">Print</button></small> -->
       </div>
       {% endfor %}
     </div>
@@ -67,5 +85,72 @@
       </small>
       <small>Extended by <a href="https://reedu.de">re:edu</a> </small>
     </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.js"
+      integrity="sha512-QzVuh4x4tCMgispFeeYqCiLJSsgReWU6DgKeR7+w/DQUABVzu9qO926wjzwV2OduOwn0g5Q1eZwRQyK1J1Hc6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
+
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-html2canvas@latest/dist/jspdf-html2canvas.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      function printPoster() {
+        const elem = document.getElementById("poster");
+
+        // html2pdf()
+        //   .from(elem)
+        //   .set({
+        //     filename: "myfile.pdf",
+        //     html2canvas: {
+        //       useCORS: true,
+        //     },
+        //     jsPDF: {
+        //       format: "a4",
+        //     },
+        //   })
+        //   .save();
+
+        // html2canvas(elem, {
+        //   onrendered: function (canvasObj) {
+        //     var pdf = new jsPDF("P", "pt", "a4"),
+        //       pdfConf = {
+        //         pagesplit: false,
+        //         backgroundColor: "#FFF",
+        //       };
+        //     doc.html(canvasObj, {
+        //       callback: function (doc) {
+        //         doc.save();
+        //       },
+        //     });
+        //   },
+        // });
+
+        // const { jsPDF } = window.jspdf;
+        // const doc = new jsPDF({
+        //   format: "a4",
+        // });
+
+        // console.log(elem);
+        // doc.html(elem, {
+        //   callback: function (doc) {
+        //     doc.save();
+        //   },
+        // });
+      }
+    </script>
   </body>
 </html>
