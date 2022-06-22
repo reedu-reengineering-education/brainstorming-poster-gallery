@@ -11,15 +11,17 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  column-gap: 5em;
-  row-gap: 5em;
-  margin: 5em;
+  grid-template-columns: repeat(auto-fill, minmax(210mm, 1fr));
+  column-gap: 5mm;
+  row-gap: 5mm;
+  margin: 5mm;
 }
 
 .poster {
   height: 297mm;
   width: 210mm;
+
+  margin: 0px auto;
 
   overflow: hidden;
 
